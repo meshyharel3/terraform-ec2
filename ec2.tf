@@ -6,9 +6,8 @@ resource "aws_instance" "my-ec2" {
   instance_type = "t2.micro"
   count = 5
   subnet_id     = "subnet-0d0ed4318de0cf810"
-
+  
   tags = {
-    Name = "my-ec2-machines"
-
-    }
+    Name = "meshy-ec2-${count.index}"
   }
+}
